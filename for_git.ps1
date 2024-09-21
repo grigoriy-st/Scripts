@@ -1,7 +1,7 @@
 ﻿git init
 git add .
 git status
-$message = Read-Host "Enter text message:"
+$message = Read-Host "Enter text message"
 git commit -m $message
 git status
 
@@ -12,7 +12,7 @@ if ($key.VirtualKeyCode -eq 13) {
     Write-Host "Upload rep"
 }
 
-git push git@github.com:grigoriy-st/Scripts.git
+git push -f git@github.com:grigoriy-st/Scripts.git
 
 
 echo "SUCCESS"
