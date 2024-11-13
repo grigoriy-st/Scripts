@@ -5,6 +5,7 @@ set softtabstop=4
 set shiftwidth=4
 set number
 set foldcolumn=2
+set bg=dark
 
 syntax on
 set noerrorbells
@@ -22,7 +23,6 @@ call vundle#begin()
 
 "--default--"
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 "--custom--"
@@ -35,6 +35,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'w0rp/ale'
+Plugin 'valloric/youcompleteme'
 
 Plugin 'nsf/gocode'
 Plugin 'townk/vim-qt'
@@ -45,6 +46,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdcommenter'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-commentary'
+
+Plugin 'c.vim'
+Plugin 'rip-rip/clang_complete'
+Plugin 'ap/vim-css-color'
 
 call vundle#end() 
 
@@ -53,6 +61,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
 Plug 'fisadev/FixedTaskList.vim'
+
 "below function is needed for ycm:
 function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
@@ -61,8 +70,8 @@ function! BuildYCM(info)
 endfunction
 
 
-
 call plug#end()
+
 
 "-- START for_colorscheme
 let g:gruvbox_italic=1
