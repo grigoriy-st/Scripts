@@ -1,0 +1,37 @@
+general {
+    colors = true
+    interval = 1
+}
+
+order += "disk /"
+order += "ethernet enp4s0"  # Убедитесь, что eth0 существует
+order += "wireless wlan0"  # Убедитесь, что wlan0 существует
+order += "cpu_usage"
+order += "memory"
+order += "time"
+
+disk "/" {
+    format = "%avail"
+}
+
+ethernet enp4s0 {
+    format_up = "Ethernet: %ip | In: %rx | Out: %tx"
+    format_down = "Ethernet: down"
+}
+
+wireless wlan0 {
+    format_up = "WiFi: %essid %ip | In: %rx | Out: %tx"
+    format_down = ""
+}
+
+cpu_usage {
+    format = "CPU: %usage"
+}
+
+memory {
+    format = "Mem: %used / %total"
+}
+
+time {
+    format = "%Y-%m-%d %H:%M:%S"
+}
