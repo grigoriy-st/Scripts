@@ -1,4 +1,4 @@
-set expandtab
+set expandtab 
 set smarttab
 set tabstop=4
 set softtabstop=4
@@ -12,9 +12,11 @@ set noerrorbells
 set novisualbell
 set mouse=a
 
+noremap <C-n> :NERDTreeToggle<CR>
 filetype off
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+let g:gruvbox_contrast_dark = 'hard'
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -29,6 +31,9 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'preservim/nerdtree'
 Plugin 'fatih/vim-go'
 Plugin 'morhetz/gruvbox'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'lambdalisue/suda.vim'
+
 "---autocomplite---"
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'davidhalter/jedi-vim'
@@ -37,6 +42,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'w0rp/ale'
 Plugin 'valloric/youcompleteme'
 
+Plugin 'tpope/vim-sensible'
 Plugin 'nsf/gocode'
 Plugin 'townk/vim-qt'
 Plugin 'mattn/emmet-vim'
@@ -61,7 +67,13 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
 Plug 'fisadev/FixedTaskList.vim'
+Plug 'lambdalisue/suda.vim'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
+Plug 'ryanoasis/vim-devicons'   " Иконки файлов
+Plug 'vim-syntastic/syntastic' " Проверка синтаксиса
+Plug 'airblade/vim-gitgutter' " Индикация изменений в git
+Plug 'vim-python/python-syntax' " Подсветка синтаксиса для Python
 "below function is needed for ycm:
 function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
@@ -97,11 +109,17 @@ source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 " Enable packloadall for pack plugins.
 packloadall
 
+"-- EMMET CONFIG --
+" redefine trigger key
+let g:user_emmet_leader_key=','
+
 let g:gruvbox_termcolors=16
 "-- END for_colorscheme
 
+let g:suda#prompt = 'Mot de passe: '
+
 "-- START Fonts
-set guifont=Fira:h20
+set guifont=Fira\ Code:h20
 "-- END Fonts 
 
 "-- START Spaces
@@ -112,7 +130,14 @@ set expandtab
 set smartindent
 "-- END Spaces
 
+"-- Shortcuts
+vnoremap <C-a> :<C-u>normal! ggVG<CR>
 filetype plugin indent on
 
+" Настройка Alt+Backspace для удаления слова в режиме вставки
+inoremap <M-BS> <C-o>daw
 
+" Настройка Ctrl+Delete для удаления слова вперед в режиме вставки
+inoremap <C-Delete> <C-o>dw
 colorscheme gruvbox
+highlight Normal guibg=#000000

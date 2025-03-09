@@ -1,3 +1,4 @@
 [network]
-command=~/.config/i3blocks/network.sh
+label=ETH:
 interval=1
+command=~/scripts/net_speed.sh
