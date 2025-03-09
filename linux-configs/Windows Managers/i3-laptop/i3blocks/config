@@ -1,0 +1,4 @@
+[network]
+label=ETH:
+interval=1
+command=~/scripts/net_speed.sh
