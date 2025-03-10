@@ -2,7 +2,7 @@
 
 general {
     colors = true # включение/выключение поддержки цветов true/false
-    interval = 1 # интервал обновления строки статуса, в секундах
+    interval = 5 # интервал обновления строки статуса, в секундах
     output_format = "i3bar" # формат вывода, устанавливаем i3bar (JSON)
 }
 
@@ -27,6 +27,12 @@ ethernet enp4s0 {
 #     format_down = "ETH: Disconnected"
 #     interface = "enp4s0"
 }
+
+# Wireless
+# wireless _first_ {
+#         format_up = "W: (%quality at %essid) %ip"
+#         format_down = "W: down"
+# }
 
 # отслеживание процесса openvpn
 # служит как индикатор работы openvpn клиента
