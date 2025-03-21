@@ -1,9 +1,30 @@
 !/bin/bash
 
-if test -d /Documents/__REMOTE__; then
-	cd /Documents/__REMOTE__
-	if ! test -d Scripts; then
-		git clone git@github.com:grigoriy-st/Scripts.git
-	fi
-	# Update local conf-files fro, repository Script
+cd ../config_files # select folder with config files
+
+read -p "This is PC or laptop? (pc,laptop)" device
+
+if [ "$device" == "laptop" ]; then
+	# Update .bashrc
+	cp shells/bash/.bashrc ~/.bashrc
+
+	# Update .zshrc
+	cp /shells/zsh/.zshrc ~/.zshrc
+
+	# Update .vimrc
+	cp vim/.vimrc ~/.vimrc
 	
+	cd "Windows Managers"
+
+	# Set up i3 for laptop
+	cd i3-laptop
+
+	# replace main i3 config file
+	cp i3/config ~/.config/i3/
+	
+	# replace i3 config files from /etc/
+	cp etc/i3status.conf ~/etc/
+
+fi
+
+
