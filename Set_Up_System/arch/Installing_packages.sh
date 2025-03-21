@@ -40,6 +40,7 @@ packages=(
 	# fonts
 	noto-fonts noto-fonts-emoji noto-fonts-extra
 	# others
+    redshift \
 	obs-studio telegram-desktop obsidian \
 	thunar xclip xsel tree\
 	)
@@ -99,4 +100,5 @@ vim -c 'PlugInstall' -c 'qa'
 cd ~/.vim/bundle/youcompleteme
 python3 install.py --go-completer
 
+# Redshift
 
