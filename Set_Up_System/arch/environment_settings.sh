@@ -25,6 +25,23 @@ if [ "$device" == "laptop" ]; then
 	# replace i3 config files from /etc/
 	cp etc/i3status.conf ~/etc/
 
+elif [ "$device" == "pc" ]; then
+
+	# Update .zshrc
+	cp shells/zsh/.zshrc ~/.zshrc
+	if [ $? -eq 0 ]; then
+	    echo "Copying .zshrc is SUCCESSFULLY"
+	else
+	    echo "Error when copying .zshrc."
+	fi
+	
+	# Update .vimrc
+	cp vim/.vimrc ~/.vimrc
+	if [ $? -eq 0 ]; then
+	    echo "Copying .vimrc is SUCCESSFULLY"
+	else
+	    echo "Error when copying .vimrc."
+	fi
 fi
 
 

@@ -1,10 +1,17 @@
 #!/bin/bash
 
+cleanup() {
+    echo -e "\nScript interrupted. Existing ..."
+    exit 0
+}
+
+trap cleanup SIGINT
+
 packages=(
 	# terminals
 	zsh \
-	zsh-syntax-highlighting zsh-auto-suggestions \
-	terminator \
+	# zsh-syntax-highlighting zsh-auto-suggestions \
+	terminator tmux \
 	# editors
 	code gvim \
 	#vsc
@@ -33,14 +40,20 @@ packages=(
 	# fonts
 	noto-fonts noto-fonts-emoji noto-fonts-extra
 	# others
-	obs-studio telegram-desktop thunar xclip xsel tree\
+	obs-studio telegram-desktop obsidian \
+	thunar xclip xsel tree\
 	)
+
 
 for package in "${packages[@]}"; do
 	echo "Installing $package ..."
-	sudo pacman -Sy --noconfirm "$package"
+    if ! pacman -Q "$package" &> /dev/null; then
+    	sudo pacman -Sy --noconfirm "$package"
+    else
+        echo -e "----- Package $package is installed. -----"
+    fi
 done
-
+exit 0
 # --- Additional settings for installd packages ---
 #
 # Start dockerd
@@ -57,8 +70,15 @@ yay -S -noconfirm postman
 # For Zsh
 ## zsh by defult shell
 chsh -s $(which zsh)
+## zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ## Oh-my-push
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+## powerlevel10k
+yay -S zsh-theme-powerlevel10k
+p10k configure
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 
 # VirtualBox
 yay -S --noconfirm virtualbox
