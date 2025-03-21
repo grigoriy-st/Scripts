@@ -58,9 +58,7 @@ yay -S -noconfirm postman
 ## zsh by defult shell
 chsh -s $(which zsh)
 ## Oh-my-push
-curl -s https://ohmyposh.dev/install.sh | bash
-echo 'eval "$(oh-my-posh init zsh --config ~/path/to/your/theme.omp.json)"' > ~/.zshrc
-source ~/.zshrc
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # VirtualBox
 yay -S --noconfirm virtualbox
