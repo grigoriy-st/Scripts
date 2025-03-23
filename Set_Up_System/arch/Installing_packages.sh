@@ -13,7 +13,7 @@ packages=(
 	# zsh-syntax-highlighting zsh-auto-suggestions \
 	terminator tmux \
 	# editors
-	code gvim \
+	code gvim \ # крашится, т.к. требует подтверждения на замену стандартного vim
 	#vsc
 	git \
 	# languages
@@ -77,7 +77,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ## Oh-my-push
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ## powerlevel10k
-yay -S zsh-theme-powerlevel10k
+yay -S zsh-theme-powerlevel10k # --- Проблема. Нужно два раза подтвердить I и I
 p10k configure
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 
@@ -88,6 +88,7 @@ sudo modprobe vboxnetadp
 sudo modprobe vboxnetflt
 
 # Vim
+# Установка с входом в vim. Нужно решить проблему с установкой.
 ## Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c 'PluginInstall' -c 'qa'

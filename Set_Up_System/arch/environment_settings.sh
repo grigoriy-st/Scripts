@@ -1,4 +1,8 @@
 !/bin/bash
+#
+# Need to install conf files:
+# oh-my-push, terminal, vscode, 
+#
 
 cd ../config_files # select folder with config files
 
@@ -9,7 +13,7 @@ if [ "$device" == "laptop" ]; then
 	cp shells/bash/.bashrc ~/.bashrc
 
 	# Update .zshrc
-	cp /shells/zsh/.zshrc ~/.zshrc
+	cp shells/zsh/.zshrc ~/.zshrc
 
 	# Update .vimrc
 	cp vim/.vimrc ~/.vimrc
@@ -23,7 +27,7 @@ if [ "$device" == "laptop" ]; then
 	cp i3/config ~/.config/i3/
 	
 	# replace i3 config files from /etc/
-	cp etc/i3status.conf ~/etc/
+	cp /etc/i3status.conf ~/etc/
 
 elif [ "$device" == "pc" ]; then
 
