@@ -40,6 +40,7 @@ packages=(
 	# fonts
 	noto-fonts noto-fonts-emoji noto-fonts-extra
 	# others
+    xorg-xinput \
     redshift \
 	obs-studio telegram-desktop obsidian \
 	thunar xclip xsel tree\
