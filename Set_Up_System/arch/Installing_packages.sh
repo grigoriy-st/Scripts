@@ -24,6 +24,7 @@ packages=(
 	# nodejs jdk-openjdk jre-jdk npm \
 	# virtualization/conteniarization
 	docker kubectl minikube \
+    qemu libvirt virt-manager dnsmasq \
 	# CI/CD
 	jenkins \
 	# IaC
@@ -36,7 +37,8 @@ packages=(
 	qtcreator qt5-base qt5-svg qt5-webengine \
 	#broswers
 	firefox \
-
+    #audio
+    pulseaudio pulseaudio-alsa \
 	# fonts
 	noto-fonts noto-fonts-emoji noto-fonts-extra
 	# others
@@ -103,4 +105,9 @@ cd ~/.vim/bundle/youcompleteme
 python3 install.py --go-completer
 
 # Redshift
+
+# KVM/QUEMU
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+sudo usermod -aG libvirt $(whoami)
 
