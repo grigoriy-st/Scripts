@@ -14,6 +14,8 @@ packages=(
 	terminator tmux \
 	# editors
 	code gvim \ # крашится, т.к. требует подтверждения на замену стандартного vim
+    # File explorers
+    thunar, mc \
 	#vsc
 	git \
 	# languages
@@ -33,11 +35,11 @@ packages=(
 	postgresql sqlite \
 	# monitoring
 	prometheus \
-	#desktop developing
+	# desktop developing
 	qtcreator qt5-base qt5-svg qt5-webengine \
-	#broswers
+	# broswers
 	firefox \
-    #audio
+    # audio
     pulseaudio pulseaudio-alsa \
 	# fonts
 	noto-fonts noto-fonts-emoji noto-fonts-extra
@@ -45,7 +47,7 @@ packages=(
     xorg-xinput \
     redshift \
 	obs-studio telegram-desktop obsidian \
-	thunar xclip xsel tree\
+	xclip xsel tree\
 	)
 
 
