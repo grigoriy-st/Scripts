@@ -27,6 +27,7 @@ packages=(
 	# virtualization/conteniarization
 	docker kubectl minikube \
     qemu libvirt virt-manager dnsmasq \
+    virtualbox virtualbox-guest-utils \  # For VirtualBox
 	# CI/CD
 	jenkins \
 	# IaC
@@ -43,7 +44,14 @@ packages=(
     pulseaudio pulseaudio-alsa \
 	# fonts
 	noto-fonts noto-fonts-emoji noto-fonts-extra
+    # players
+    vlc \
+    mvp \ # For Midnight Commander
+    # for Media
+    shotcut \ # Requires selection and confirmation
 	# others
+    transmission-qt \
+    unzip \
     xorg-xinput \
     redshift \
 	obs-studio telegram-desktop obsidian \
