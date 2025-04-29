@@ -81,6 +81,8 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 # Postman
 yay -S -noconfirm postman
 
+# -- SHELLS
+#
 # For Zsh
 ## zsh by defult shell
 chsh -s $(which zsh)
@@ -93,6 +95,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 yay -S zsh-theme-powerlevel10k # --- Проблема. Нужно два раза подтвердить I и I
 p10k configure
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+
+# -- SOFTWARE
+#
+# Docker-desktop
+yay -S --noconfirm docker-desktop
 
 # VirtualBox
 yay -S --noconfirm virtualbox
