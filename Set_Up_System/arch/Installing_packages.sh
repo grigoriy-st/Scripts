@@ -123,6 +123,10 @@ python3 install.py --go-completer
 
 # Redshift
 
+# Anki
+
+yay -S anki-bin --nonconfirm
+
 # KVM/QUEMU
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
