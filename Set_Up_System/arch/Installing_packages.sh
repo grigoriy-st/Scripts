@@ -136,6 +136,10 @@ yay -S gnome-shell-pomodoro
 
 # Redshift
 
+# Anki
+
+yay -S anki-bin --nonconfirm
+
 # KVM/QUEMU
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
