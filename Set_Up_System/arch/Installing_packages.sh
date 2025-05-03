@@ -7,16 +7,24 @@ cleanup() {
 
 trap cleanup SIGINT
 
-packages=(
-	# terminals
+packageinals=(
+    # network utilities
+    netctl dhcpcd wpa_supplicant \
+    wireshark-cli \
+    # wireshark-qt \
+    # necessary utilities
+	xclip xsel tree unzip \
+    # for imput devices
+    xorg-xinput \
+    # for shells
 	zsh \
 	# zsh-syntax-highlighting zsh-auto-suggestions \
 	terminator tmux \
 	# editors
 	code gvim \ # крашится, т.к. требует подтверждения на замену стандартного vim
-    # File explorers
+    # file explorers
     thunar, mc \
-	#vsc
+	# VCS
 	git \
 	# languages
 	go python rust \
@@ -51,12 +59,9 @@ packages=(
     shotcut \ # Requires selection and confirmation
 	# others
     transmission-qt \
-    unzip \
-    xorg-xinput \
     redshift \
 	obs-studio telegram-desktop obsidian \
-	xclip xsel tree\
-	)
+)
 
 
 for package in "${packages[@]}"; do
@@ -120,6 +125,14 @@ vim -c 'PlugInstall' -c 'qa'
 
 cd ~/.vim/bundle/youcompleteme
 python3 install.py --go-completer
+
+# Pomodoro timer
+
+yay -S gnome-shell-pomodoro
+
+# Android Studio
+
+# yay -S android-studio
 
 # Redshift
 
