@@ -13,12 +13,12 @@ packageinals=(
     wireshark-cli \
     # wireshark-qt \
     # necessary utilities
-	xclip xsel tree unzip \
+	xclip xsel tree unzip which\
     # for imput devices
     xorg-xinput \
     # for shells
 	zsh \
-	# zsh-syntax-highlighting zsh-auto-suggestions \
+	zsh-syntax-highlighting zsh-auto-suggestions \
 	terminator tmux \
 	# editors
 	code gvim \ # крашится, т.к. требует подтверждения на замену стандартного vim
@@ -37,13 +37,13 @@ packageinals=(
     qemu libvirt virt-manager dnsmasq \
     virtualbox virtualbox-guest-utils \  # For VirtualBox
 	# CI/CD
-	jenkins \
+	# jenkins \
 	# IaC
 	ansible \
 	# db
 	postgresql sqlite \
 	# monitoring
-	prometheus \
+	# prometheus \
 	# desktop developing
 	qtcreator qt5-base qt5-svg qt5-webengine \
 	# broswers
@@ -56,7 +56,7 @@ packageinals=(
     vlc \
     mvp \ # For Midnight Commander
     # for Media
-    shotcut \ # Requires selection and confirmation
+    # shotcut \ # Requires selection and confirmation
 	# others
     transmission-qt \
     redshift \
