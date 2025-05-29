@@ -7,7 +7,7 @@ function cleanup() {
 
 trap cleanup SIGINT
 
-packageinals=(
+packages=(
     # network utilities
     netctl dhcpcd wpa_supplicant \
     wireshark-cli \
@@ -101,6 +101,9 @@ yay -S --noconfirm virtualbox
 sudo modprobe vboxdrv
 sudo modprobe vboxnetadp
 sudo modprobe vboxnetflt
+
+# Font
+yay -S ttf-cascadia-code
 
 # Vim
 ./vim-set_up.sh

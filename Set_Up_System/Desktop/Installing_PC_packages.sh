@@ -7,7 +7,7 @@ cleanup() {
 
 trap cleanup SIGINT
 
-packageinals=(
+packages=(
     # network utilities
     netctl dhcpcd wpa_supplicant \
     wireshark-cli \
