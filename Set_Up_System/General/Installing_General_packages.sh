@@ -56,6 +56,9 @@ packages=(
     mvp \ # For Midnight Commander
     # for Media
     # shotcut \ # Requires selection and confirmation
+    
+    # Windows compatible
+    ntfs-3g \ 
 	# others
     transmission-qt \
     redshift \
