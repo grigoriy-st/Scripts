@@ -31,13 +31,13 @@ packages=(
 	# for programming
 	python-pip base-devel cmake \
 	# for vim
-	# nodejs jdk-openjdk jre-jdk npm \
+	nodejs jdk-openjdk jre-jdk npm \
 	# virtualization/conteniarization
 	docker kubectl minikube \
     qemu libvirt virt-manager dnsmasq \
     virtualbox virtualbox-guest-utils \  # For VirtualBox
 	# CI/CD
-	# jenkins \
+	jenkins \
 	# IaC
 	ansible \
 	# db
