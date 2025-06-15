@@ -2,7 +2,7 @@
 
 general {
     colors = true # включение/выключение поддержки цветов true/false
-    interval = 1 # интервал обновления строки статуса, в секундах
+    interval = 5 # интервал обновления строки статуса, в секундах
     output_format = "i3bar" # формат вывода, устанавливаем i3bar (JSON)
 }
 
@@ -11,12 +11,12 @@ general {
 # order += "run_watch openconnect"
 
 order += "ethernet enp4s0"
-# order += "wireless _first_"
-# order += "battery all"
-# order += "disk /"
+order += "wireless _first_"
+order += "disk /"
 order += "memory"
 order += "cpu_usage"
 order += "cpu_temperature 0"
+order += "battery all"
 order += "volume master"
 order += "tztime local"
 
@@ -59,36 +59,30 @@ volume master {
 
 # индикатор WIFI
 wireless _first_ {
-    # шаблон вывода, можно дополнить
-    # наименованием подключения %essid
-    # и ip адресом %ip
     format_up = "%quality %frequency"
     format_down = ""
 }
 
 # состояние заряда батареи
-# battery all {
-#     # шаблон вывода, можно дополнить
-#     # оставшимся временем работы %emptytime
-#     # энергопотреблением %consumption в ваттах
-#     format = "%status %percentage"
-# 
-#     # true - показ процента заряда от 0 до 100
-#     # false - показ процента заряда от 0 до n, с учетом
-#     # изношенности аккумулятора
-#     last_full_capacity = true
-#     format_down = "No battery"
-#     status_chr = "" # статус подзарядки
-#     status_bat = "" # статус в режиме работы от батареи
-#     status_unk = "? UNK" # неизвестный статус
-#     status_full = "" # статус полного заряда
-#     path = "/sys/class/power_supply/BAT%d/uevent"
-# 
-#     # нижний порог заряда, после которого блок
-#     # будет окрашен в "color_bad" (по умолчанию красный)
-#     # подробнее в man i3status
-#     low_threshold = 10
-# }
+battery all {
+    format = "%status %percentage %emptytime"
+
+    # true - показ процента заряда от 0 до 100
+    # false - показ процента заряда от 0 до n, с учетом
+    # изношенности аккумулятора
+    last_full_capacity = true
+    format_down = "No battery"
+    status_chr = "" # статус подзарядки
+    status_bat = "" # статус в режиме работы от батареи
+    status_unk = "? UNK" # неизвестный статус
+    status_full = "" # статус полного заряда
+    path = "/sys/class/power_supply/BAT%d/uevent"
+
+    # нижний порог заряда, после которого блок
+    # будет окрашен в "color_bad" (по умолчанию красный)
+    # подробнее в man i3status
+    low_threshold = 10
+}
 
 # отслеживаемый накопитель
 disk "/" {
@@ -151,7 +145,7 @@ cpu_usage {
 
 # вывод даты и времени по заданному формату
 tztime local {
-    format = " %d %b  %H:%M:%S"
+    format = " %d %b  %H:%M"
 }
 
 # bar {
