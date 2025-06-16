@@ -9,60 +9,61 @@ trap cleanup SIGINT
 
 packages=(
     # network utilities
-    netctl dhcpcd wpa_supplicant \
-    wireshark-cli \
-    # wireshark-qt \
+    netctl dhcpcd wpa_supplicant dnsutils tcpdump httpie
+    openssl
+    wireshark-cli
+    # wireshark-qt
     # necessary utilities
-	xclip xsel tree less unzip which wget \
-    dos2unix \
+	xclip xsel tree less unzip which wget
+    dos2unix
     # for shells
-	zsh \
-	zsh-syntax-highlighting zsh-auto-suggestions \
-	terminator tmux \
+	zsh
+	zsh-syntax-highlighting zsh-auto-suggestions
+	terminator tmux
 	# editors
-	code gvim \ # крашится, т.к. требует подтверждения на замену стандартного vim
+	code gvim# крашится, т.к. требует подтверждения на замену стандартного vim
     # file explorers
-    thunar, mc \
+    thunar, mc
 	# VCS
-	git \
+	git
 	# languages
-	go python rust \
+	go python rust
 	# for programming
-	python-pip base-devel cmake \
-	# for vim
-	# nodejs jdk-openjdk jre-jdk npm \
+	python-pip base-devel cmake
+	nodejs jdk-openjdk jre-jdk npm
 	# virtualization/conteniarization
-	docker kubectl minikube \
-    qemu libvirt virt-manager dnsmasq \
-    virtualbox virtualbox-guest-utils \  # For VirtualBox
+	docker kubectl minikube
+    qemu libvirt virt-manager dnsmasq
+    virtualbox virtualbox-guest-utils  # For VirtualBox
 	# CI/CD
-	# jenkins \
+	# jenkins
 	# IaC
-	ansible \
+	ansible
 	# db
-	postgresql sqlite \
+	postgresql sqlite
 	# monitoring
-	# prometheus \
+	# prometheus
 	# desktop developing
-	qtcreator qt5-base qt5-svg qt5-webengine \
+	qtcreator qt5-base qt5-svg qt5-webengine
 	# broswers
-	firefox \
+	firefox
     # audio
-    pulseaudio pulseaudio-alsa \
+    pulseaudio pulseaudio-alsa
 	# fonts
 	noto-fonts noto-fonts-emoji noto-fonts-extra
     # players
-    vlc \
-    mvp \ # For Midnight Commander
+    vlc
+    mvp# For Midnight Commander
     # for Media
-    # shotcut \ # Requires selection and confirmation
+    # shotcut # Requires selection and confirmation
     
     # Windows compatible
-    ntfs-3g \ 
+    ntfs-3g 
 	# others
-    transmission-qt \
-    redshift \
-	obs-studio telegram-desktop obsidian \
+    maim
+    transmission-qt
+    redshift
+	obs-studio telegram-desktop obsidian
     # themes
     gnome-themes-extra
 )
