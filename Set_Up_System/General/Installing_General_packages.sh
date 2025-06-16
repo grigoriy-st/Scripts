@@ -63,6 +63,8 @@ packages=(
     transmission-qt \
     redshift \
 	obs-studio telegram-desktop obsidian \
+    # themes
+    gnome-themes-extra
 )
 
 
@@ -130,3 +132,6 @@ sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo usermod -aG libvirt $(whoami)
 
+# Set Up themes
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
