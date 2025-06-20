@@ -15,7 +15,7 @@ packages=(
     # wireshark-qt
     # necessary utilities
 	xclip xsel tree less unzip which wget
-    dos2unix
+    mupdf dos2unix
     # for shells
 	zsh
 	zsh-syntax-highlighting zsh-auto-suggestions
