@@ -87,6 +87,8 @@ Plug 'ryanoasis/vim-devicons'   " Иконки файлов
 Plug 'vim-syntastic/syntastic' " Проверка синтаксиса
 Plug 'airblade/vim-gitgutter' " Индикация изменений в git
 Plug 'vim-python/python-syntax' " Подсветка синтаксиса для Python
+Plug 'psliwka/vim-smoothie' " Плавная прокрутка
+
 "below function is needed for ycm:
 function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
@@ -144,11 +146,15 @@ set smartindent
 vnoremap <C-a> :<C-u>normal! ggVG<CR>
 filetype plugin indent on
 
-" Настройка Alt+Backspace для удаления слова в режиме вставки
-inoremap <M-BS> <C-o>daw
+"-- Deleting words under the cursor
+inoremap <Char-0x07F> <C-w>  " Alt+Backspace 
+inoremap <M-BS> <C-w>
+nnoremap <Char-0x07F> db
+nnoremap <M-BS> db
 
-" Настройка Ctrl+Delete для удаления слова вперед в режиме вставки
-inoremap <C-Delete> <C-o>dw
+inoremap <C-Del> <Esc>dwi " Ctrl + Del
+nnoremap <C-Del> dw
+
 colorscheme gruvbox
 highlight Normal guibg=#000000
 

@@ -1,7 +1,7 @@
 -- Base settings
 vim.opt.expandtab = true
 vim.opt.smarttab = true
-vim.opt.tabstop = 4
+.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.number = true
@@ -20,7 +20,10 @@ vim.keymap.set('n', '<Leader>p', ':r !wl-paste<CR>')
 vim.keymap.set('v', '<Leader>y', ':\'<,\'>w !xclip -sel clip<CR>')
 vim.keymap.set('n', '<Leader>p', ':r !xclip -o -sel clip<CR>')
 
--- Plugins packer.nvim
+-- Deleting words under the cursor
+vim.keymap.set('i', '<C-Del>', '<Esc>dwi', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-Del>', 'dw', { noremap = true, silent = true })
+--Plugins packer.nvim
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   
@@ -47,10 +50,15 @@ require('packer').startup(function(use)
   use 'vim-syntastic/syntastic'
   use 'airblade/vim-gitgutter'
   use 'vim-python/python-syntax'
+  use 'sphamba/smear-cursor.nvim'
+  use 'psliwka/vim-smoothie'
 end)
 
 -- LSP Server
 -- require'lspconfig'.pylsp.setup{}
+
+-- Smear Cursor
+require('smear_cursor').enabled = true
 
 -- NERDTree
 vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>')
