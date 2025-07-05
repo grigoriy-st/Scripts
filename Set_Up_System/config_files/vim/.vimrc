@@ -6,7 +6,7 @@ set shiftwidth=4
 set number
 set foldcolumn=2
 set bg=dark
-set nu
+set nu rnu
 let skip_defaults_vim = 1
 
 syntax on
@@ -144,12 +144,12 @@ set smartindent
 
 "-- Shortcuts
 vnoremap <C-a> :<C-u>normal! ggVG<CR>
-filetype plugin indent on
+iletype plugin indent on
 
 "-- Deleting words under the cursor
-inoremap <Char-0x07F> <C-w>  " Alt+Backspace 
+" inoremap <Char-0x07F> <C-w> 
 inoremap <M-BS> <C-w>
-nnoremap <Char-0x07F> db
+" nnoremap <Char-0x07F> db
 nnoremap <M-BS> db
 
 inoremap <C-Del> <Esc>dwi " Ctrl + Del

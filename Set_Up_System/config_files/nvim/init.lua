@@ -1,7 +1,7 @@
 -- Base settings
 vim.opt.expandtab = true
 vim.opt.smarttab = true
-.tabstop = 4
+vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.number = true
@@ -13,6 +13,8 @@ vim.opt.errorbells = false
 vim.opt.visualbell = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.mouse = 'a'
+vim.opt.relativenumber = true
+
 
 -- Setting up buffers
 vim.keymap.set('v', '<Leader>y', ':\'<,\'>w !wl-copy<CR>')
@@ -58,7 +60,11 @@ end)
 -- require'lspconfig'.pylsp.setup{}
 
 -- Smear Cursor
-require('smear_cursor').enabled = true
+require('smear_cursor').setup({
+    interval = 160,
+    speed = 5, 
+})
+
 
 -- NERDTree
 vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>')
