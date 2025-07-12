@@ -1,0 +1,100 @@
+{
+    "workbench.colorTheme": "Vim Dark Hard",
+    "go.toolsManagement.autoUpdate": true,
+    "extensions.ignoreRecommendations": true,
+    "python.createEnvironment.trigger": "off",
+    "git.openRepositoryInParentFolders": "never",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.empty.hint": "hidden",
+    "editor.largeFileOptimizations": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.settings.applyToAllProfiles": [
+    ],
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font', monospace",
+    "terminal.integrated.fontSize": 14,
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "vim.statusBarStrings.disabled": "",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        "completeUnimported": true, // autocomplete unimported packages
+        "watchFileChanges": true,  // watch file changes outside of the editor
+        "deepCompletion": true,     // enable deep completion
+    },
+    "files.eol": "\n",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc",
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.smartRelativeLine": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+        "before": ["<leader>", "n"],
+        "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+        "before": ["<leader>", "r", "r"],
+        "commands": ["editor.action.rename"]
+        },
+        {
+        "before": ["K"],
+        "commands": ["editor.action.showHover"]
+        },
+        {
+        "before": ["<leader>", "r", "f"],
+        "commands": ["fileutils.renameFile"]
+        },
+        {
+        "before": ["<leader>", "p", "s"],
+        "commands": ["fuzzySearch.activeTextEditor"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+        "before": ["J"],
+        "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+        "before": ["K"],
+        "commands": ["editor.action.moveLinesUpAction"]
+        }
+    ],
+    "vim.statusBarColors.easymotionmode": [
+        "#007acc",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.insert": [
+        "#5f0000",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.replace": [
+        "#00000",
+        "#ffffff"
+    ],
+    "vim.targets.enable": true,
+    "vim.enableNeovim": true,
+    "vim.incsearch": true,
+    "vim.cmdlineInitialFilter": true,
+    "vim.wildmenu": true,
+    
+    // NERDTree extension (https://marketplace.visualstudio.com/items?itemName=Llam4u.nerdtree)
+    // "key": "ctrl+n",
+    // "command": "workbench.view.explorer",
+    // "when": "viewContainer.workbench.view.explorer.enabled",
+    "vim.handleKeys": {
+        "<C-n>": false,
+    }
+}
