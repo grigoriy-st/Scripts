@@ -10,18 +10,18 @@ trap cleanup SIGINT
 packages=(
     # network utilities
     netctl dhcpcd wpa_supplicant dnsutils tcpdump httpie
-    openssl
+    openssl bind
     wireshark-cli
+    # dnsmasq
     # wireshark-qt
     # necessary utilities
-	xclip xsel tree less unzip which wget
+	xclip xsel tree less unzip which wget bat
     mupdf dos2unix
     # for shells
-	zsh
-	zsh-syntax-highlighting zsh-auto-suggestions
+	zsh zsh-syntax-highlighting zsh-auto-suggestions
 	terminator tmux
 	# editors
-	code gvim# крашится, т.к. требует подтверждения на замену стандартного vim
+	code gvim
     # file explorers
     thunar, mc
 	# VCS
@@ -35,6 +35,7 @@ packages=(
 	docker kubectl minikube
     qemu libvirt virt-manager dnsmasq
     virtualbox virtualbox-guest-utils  # For VirtualBox
+    # distrobox
 	# CI/CD
 	# jenkins
 	# IaC
@@ -42,6 +43,7 @@ packages=(
 	# db
 	postgresql sqlite
 	# monitoring
+    btop
 	# prometheus
 	# desktop developing
 	qtcreator qt5-base qt5-svg qt5-webengine
@@ -56,14 +58,19 @@ packages=(
     mvp# For Midnight Commander
     # for Media
     # shotcut # Requires selection and confirmation
-    
+    # Rice 
+    # cmatrix
+    dmenu
     # Windows compatible
     ntfs-3g 
+    # Social media
+    telegram-desktop
+    discord
 	# others
     maim
     transmission-qt
     redshift
-	obs-studio telegram-desktop obsidian
+	obs-studio  obsidian
     # themes
     gnome-themes-extra
 )
@@ -78,6 +85,7 @@ for package in "${packages[@]}"; do
     fi
 done
 exit 0
+
 # --- Additional settings for installd packages ---
 #
 # Start dockerd
@@ -102,31 +110,35 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 # Docker-desktop
 # yay -S --noconfirm docker-desktop
 
+# -- YAY packages --\
+#
+yay_packages=(
+    drawio
+    clipman
+    alse-utils
+    # Virtualization
+    bottles
+    virtualbox
+    # Cursor
+    bibata-cursor-translucent
+    # Font
+    ttf-cascadia-code
+    gnome-shell-pomodoro,
+    anki-bin
+    ardour
+    debtap
+    # android-studio
+    # android-sdk
+    )
+
 # VirtualBox
-yay -S --noconfirm virtualbox
 sudo modprobe vboxdrv
 sudo modprobe vboxnetadp
 sudo modprobe vboxnetflt
 
-# Font
-yay -S ttf-cascadia-code
-
 # Vim
 ./vim-set_up.sh
 
-# Pomodoro timer
-
-yay -S gnome-shell-pomodoro
-
-# Android Studio
-
-# yay -S android-studio
-
-# Redshift
-
-# Anki
-
-yay -S anki-bin --nonconfirm
 
 # KVM/QUEMU
 sudo systemctl start libvirtd
