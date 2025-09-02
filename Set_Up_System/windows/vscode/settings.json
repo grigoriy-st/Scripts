@@ -1,4 +1,7 @@
 {
+    "terminal.integrated.echoCommand": false,
+    "terminal.integrated.echoStartCommand": false,
+    "terminal.integrated.showWelcomeMessage": false,
     "workbench.colorTheme": "Vim Dark Hard",
     "explorer.confirmDragAndDrop": false,
     "go.toolsManagement.autoUpdate": true,
@@ -16,6 +19,8 @@
     "editor.fontFamily": "'CaskaydiaCove Nerd Font', Consolas, 'Courier New', monospace",
     "editor.fontSize": 14,
     "editor.fontLigatures": true,
+
+
     
     "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font', monospace",
     "terminal.integrated.fontSize": 14,
