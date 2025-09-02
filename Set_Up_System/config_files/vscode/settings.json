@@ -3,7 +3,6 @@
     "terminal.integrated.echoStartCommand": false,
     "terminal.integrated.showWelcomeMessage": false,
     "workbench.colorTheme": "Vim Dark Hard",
-    "explorer.confirmDragAndDrop": false,
     "go.toolsManagement.autoUpdate": true,
     "extensions.ignoreRecommendations": true,
     "python.createEnvironment.trigger": "off",
@@ -13,8 +12,6 @@
     "editor.largeFileOptimizations": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "workbench.settings.applyToAllProfiles": [
-        
-
     ],
     "editor.fontFamily": "'CaskaydiaCove Nerd Font', Consolas, 'Courier New', monospace",
     "editor.fontSize": 14,
@@ -24,15 +21,6 @@
     
     "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font', monospace",
     "terminal.integrated.fontSize": 14,
-    "qt-core.doNotAskForDefaultQtInstallationRoot": true,
-    "cmake.additionalCompilerSearchDirs": [
-        "C:/msys64/mingw32/bin",
-        "C:/msys64/mingw64/bin",
-        "C:/msys64/clang32/bin",
-        "C:/msys64/clang64/bin",
-        "C:/msys64/clangarm64/bin",
-        "C:/msys64/ucrt64/bin"
-    ],
     "liveServer.settings.donotVerifyTags": true,
     "liveServer.settings.donotShowInfoMsg": true,
     "vim.statusBarStrings.disabled": "",
@@ -53,7 +41,7 @@
     },
     "files.eol": "\n",
     "vim.vimrc.enable": true,
-    "vim.vimrc.path": "C:\\Users\\grego\\_vimrc",
+    "vim.vimrc.path": "~/.vimrc",
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
     "vim.smartRelativeLine": true,
