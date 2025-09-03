@@ -33,16 +33,33 @@
     display: none !important;
 }
 
-/* Минималистичный режим - только адресная строка */
 #urlbar-container {
     margin: 2px !important;
 }
 
-/* Убрать кнопки свернуть/развернуть/закрыть */
 .titlebar-buttonbox-container {
     display: none !important;
 }
 
 #sidebar-button {
     display: none !important;
+}
+
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out !important;
+}
+
+#navigator-toolbox:hover #TabsToolbar,
+#navigator-toolbox:hover #nav-bar, 
+#navigator-toolbox:hover #PersonalToolbar {
+    opacity: 1 !important;
+}
+
+#navigator-toolbox:not(:hover) #TabsToolbar {
+    min-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
