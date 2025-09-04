@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Fira Code 10
+font pango:Monospace 8
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -29,6 +29,8 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# dunst
+exec --no-startup-id systemctl --user start dunst
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -44,6 +46,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Screenshots
 # with scrot
 bindsym Print exec scrot ~/Pictures/screenshot_%Y-%m-%d_%H-%M-%S.png
+
+# Brightness volume control
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+
+# Audio control
+bindcode 444 exec --no-startup-id playerctl previous
+bindcode 445 exec --no-startup-id playerctl play-pause
+bindcode 446 exec --no-startup-id playerctl next
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -102,7 +113,8 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
+bindsym $mod+e exec thunar
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -160,6 +172,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -192,8 +205,19 @@ bindsym $mod+r mode "resize"
 # change language setting
 exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 
+# Enable touchpad
+exec --no-startup-id xinput enable 10
+exec --no-startup-id xinput enable "SynPS/2 Synaptics TouchPad"
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
 # Window title alignment
-title_align center
+new_window pixel 2
+# title_align center
+
+# To sound volume management
+
+bindsym Fn+F2 amixer set Master 10%-
+bindsym Fn+F3 amixer set Master 10%+
 
 # gtk-apps dark theme
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -202,3 +226,5 @@ bar {
         status_command i3status
 }
 
+# Unlinking the keys
+# bindsym Mod1 nop
