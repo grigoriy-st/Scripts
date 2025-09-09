@@ -1,0 +1,155 @@
+set foldcolumn=2
+"set bg=dark
+set nu rnu
+let skip_defaults_vim = 1
+
+set cursorline
+set nocompatible
+set noerrorbells
+set novisualbell
+set mouse=
+set ttymouse=
+
+"-- START Spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
+"-- END Spaces
+
+""-- VUNDLE
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+""--default--"
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+""--custom--"
+Plugin 'preservim/nerdtree'
+"Plugin 'fatih/vim-go'
+"Plugin 'morhetz/gruvbox'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+""---autocomplite---"
+"Plugin 'Shougo/neocomplete.vim'
+"Plugin 'davidhalter/jedi-vim'
+"Plugin 'jnwhiteh/vim-golang'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'w0rp/ale'
+"Plugin 'valloric/youcompleteme'
+
+"Plugin 'tpope/vim-sensible'
+"Plugin 'nsf/gocode'
+"Plugin 'townk/vim-qt'
+"Plugin 'mattn/emmet-vim'
+
+""--gui--"
+"" Bar
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+
+"Plugin 'preservim/nerdcommenter'
+"Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-commentary'
+
+Plugin 'c.vim'
+"Plugin 'rip-rip/clang_complete'
+"Plugin 'ap/vim-css-color'
+
+call vundle#end()
+
+""-- ____VIM-PLUG____
+"call plug#begin('~/.vim/plugged')
+
+""Plug 'junegunn/fzf.vim'
+""Plug 'fisadev/FixedTaskList.vim'
+"Plug 'lambdalisue/suda.vim'
+""Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
+"Plug 'ryanoasis/vim-devicons'
+"" Plug 'airblade/vim-gitgutter'
+"" Plug 'psliwka/vim-smoothie'
+
+"call plug#end()
+
+"filetype plugin indent on
+"set omnifunc=syntaxcomplete#Complete
+
+""-- Цветовая схема и синтаксис
+"" ВКЛЮЧАЕМ синтаксис если хотим подсветку, ИЛИ ВЫКЛЮЧАЕМ если не хотим
+"" Раскомментируйте нужную строку:
+
+"" ВАРИАНТ 1: ВКЛЮЧИТЬ подсветку синтаксиса и цветовую схему
+"" syntax on
+"let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_italic=1
+"colorscheme gruvbox
+
+"" ВАРИАНТ 2: ВЫКЛЮЧИТЬ подсветку синтаксиса полностью
+"syntax off
+"highlight clear
+
+""-- Настройки для true-color
+"if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
+"  if (has("nvim"))
+"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"  endif
+"  if (has("termguicolors"))
+"    set termguicolors
+"  endif
+"endif
+
+"" Enable packloadall for pack plugins.
+"packloadall
+
+""-- EMMET CONFIG --
+"let g:user_emmet_leader_key=','
+
+"let g:gruvbox_termcolors=16
+
+"let g:suda#prompt = 'Mot de passe: '
+
+""-- SHORTCUTS
+"vnoremap <C-a> :<C-u>normal! ggVG<CR>
+
+""-- Deleting words under the cursor
+"inoremap <M-BS> <C-w>
+"nnoremap <M-BS> db
+
+"inoremap <C-Del> <Esc>dwi
+"nnoremap <C-Del> dw
+
+"" NERDTree
+"noremap <C-n> :NERDTreeToggle<CR>
+
+"" Hotkey для переключения синтаксиса
+"nnoremap <F4> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif <CR>
+
+""-- Airline настройки
+"let g:airline_theme='dark'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_base16_improved_contrast = 1
+
+"" powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
+
+"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
+"let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+"let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
+"set guifont=Hack\ Nerd\ Font
+
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
