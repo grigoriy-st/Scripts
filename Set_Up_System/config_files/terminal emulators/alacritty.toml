@@ -1,0 +1,36 @@
+[terminal]
+# shell = { program = "/bin/zsh", args = [ "c", "tmux attach || tmux new" ] }
+shell = { program = "/bin/zsh" }
+
+[font]
+normal = { family = "Cascadia Code NF", style = "Regular" }
+size = 8.0
+
+[colors]
+[colors.primary]
+background = "#000000"
+
+
+[colors.cursor]
+text = "#282a36"
+cursor = "#f8f8f2"
+
+[colors.normal]
+black = "#000000"
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+blue = "#bd93f9"
+magenta = "#ff79c6"
+cyan = "#8be9fd"
+white = "#bbbbbb"
+
+[colors.bright]
+black = "#555555"
+red = "#ff6e6e"
+green = "#69ff94"
+yellow = "#ffffa5"
+blue = "#d6acff"
+magenta = "#ff92df"
+cyan = "#a4ffff"
+white = "#ffffff"

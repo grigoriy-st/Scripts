@@ -9,6 +9,7 @@ set bg=dark
 set nu rnu
 let skip_defaults_vim = 1
 
+colorscheme industry
 syntax on
 set nocompatible
 set noerrorbells
