@@ -135,3 +135,10 @@ set guifont=Hack\ Nerd\ Font
 
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+
+" === NERDTREE ===
+let g:NERDTreeShowLineNumbers = 1
+let g:NERDTreeAutoCenter = 1
+let g:NERDTreeWinSize = 35
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
