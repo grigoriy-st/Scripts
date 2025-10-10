@@ -1,29 +1,111 @@
-set foldcolumn=2
-"set bg=dark
-set nu rnu
 let skip_defaults_vim = 1
-filetype plugin indent on
 
+"-- Font
+set guifont=FiraCode:h8
+
+" Other settings
 " set cursorline
-set colorcolumn=80
-colorscheme industry
 set nocompatible
 set noerrorbells
 set novisualbell
+set mouse=
 set ttymouse=
+set showtabline=2
+set nofoldenable
+set colorcolumn=80
+highlight ColorColumn guifg=NONE guibg=#121212 ctermbg=233
 
-"-- START Spaces
+"-- Line warpping START
+set wrap
+set linebreak
+set showbreak=↪\ \ 
+"-- Line warpping END
+
+"-- Folding START
+set foldmethod=manual
+set foldcolumn=2
+set foldmethod=syntax
+"-- Folding END
+
+"-- Numeration START
+set nu rnu
+function! ToggleNumbering()
+  if &number
+    " Выключаем всё
+    set nonumber norelativenumber foldcolumn=0
+  else
+    " Включаем всё
+    set number relativenumber foldcolumn=2
+  endif
+endfunction
+
+nnoremap <F2> :call ToggleNumbering()<CR>
+inoremap <F2> <C-o>:call ToggleNumbering()<CR>
+"-- Numeration END
+
+"-- Netrw START
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_winsize = 30 
+nnoremap <silent> <C-n> :call ToggleNetrw()<CR>
+autocmd FileType netrw setlocal number relativenumber
+
+function! ToggleNetrw()
+  let l:netrw_win = -1
+  for l:win in range(1, winnr('$'))
+    if getwinvar(l:win, '&filetype') == 'netrw'
+      let l:netrw_win = l:win
+      break
+    endif
+  endfor
+
+  if l:netrw_win != -1
+
+    execute l:netrw_win . 'wincmd w'
+    quit
+  else
+
+    let l:current_win = winnr()
+    silent! Lexplore
+
+    execute l:current_win . 'wincmd w'
+  endif
+endfunction
+
+"-- Netrw END
+
+"-- Bracket and Quatetion marks Autocompletion
+
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap < <><Left>
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '"' ? '"' : '""<Left>'
+"inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "'" ? "'" : "''<Left>'
+
+"-- Syntax highlihting START
+colorscheme industry
+filetype plugin indent on
+nnoremap <F4> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif <CR>
+"-- Syntax highlihting END
+
+"-- Spaces START
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
 set smartindent
+"-- Spaces END
 
-"-- Encoding
-set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
+"-- Search START
+set incsearch 
+set hlsearch  
+set ignorecase
+set smartcase 
+"-- Search END
 
 ""-- VUNDLE
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -35,17 +117,17 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 ""--custom--"
-Plugin 'preservim/nerdtree'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plugin 'fatih/vim-go'
-"Plugin 'morhetz/gruvbox'
+" Plugin 'preservim/nerdtree'
+" Plugin 'fatih/vim-go'
+" Plugin 'morhetz/gruvbox'
+" Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 ""---autocomplite---"
-Plugin 'jiangmiao/auto-pairs'
-" Plugin 'w0rp/ale'
 "Plugin 'Shougo/neocomplete.vim'
 "Plugin 'davidhalter/jedi-vim'
 "Plugin 'jnwhiteh/vim-golang'
+" Plugin 'jiangmiao/auto-pairs'
+" Plugin 'w0rp/ale'
 "Plugin 'valloric/youcompleteme'
 
 "Plugin 'tpope/vim-sensible'
@@ -60,7 +142,7 @@ Plugin 'jiangmiao/auto-pairs'
 
 "Plugin 'preservim/nerdcommenter'
 "Plugin 'mileszs/ack.vim'
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 
@@ -75,70 +157,12 @@ call plug#begin('~/.vim/plugged')
 
 ""Plug 'junegunn/fzf.vim'
 ""Plug 'fisadev/FixedTaskList.vim'
-"Plug 'lambdalisue/suda.vim'
+Plug 'lambdalisue/suda.vim'
 ""Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
-"Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 "" Plug 'airblade/vim-gitgutter'
 "" Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
-"set omnifunc=syntaxcomplete#Complete
-
-"" Enable packloadall for pack plugins.
-"packloadall
-
-""-- EMMET CONFIG --
-"let g:user_emmet_leader_key=','
-
-"let g:gruvbox_termcolors=16
-
-"let g:suda#prompt = 'Mot de passe: '
-
-""-- SHORTCUTS
-"vnoremap <C-a> :<C-u>normal! ggVG<CR>
-
-""-- Deleting words under the cursor
-"inoremap <M-BS> <C-w>
-"nnoremap <M-BS> db
-
-"inoremap <C-Del> <Esc>dwi
-"nnoremap <C-Del> dw
-
-"" NERDTree
-noremap <C-n> :NERDTreeToggle<CR>
-
-
-""-- Airline
-"let g:airline_theme='dark'
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline_base16_improved_contrast = 1
-
-"" powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
-"let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-"let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
-set guifont=Hack\ Nerd\ Font
-
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-
-" === NERDTREE ===
-let g:NERDTreeShowLineNumbers = 1
-let g:NERDTreeAutoCenter = 1
-let g:NERDTreeWinSize = 35
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
