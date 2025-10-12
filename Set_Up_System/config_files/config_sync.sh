@@ -20,7 +20,7 @@ case "$selected_item" in
         echo "vimrc is copied"
     ;;
     terminal\ emulators)
-        cp ~/.config/alacritty/alacritty.toml ./alacritty.toml
+        cp ~/.config/alacritty/alacritty.toml ./terminator/Alacritty/alacritty.toml
         echo "alacritty is copied"
     ;;
 # Coming soon...

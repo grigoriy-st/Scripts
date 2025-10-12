@@ -86,7 +86,8 @@ inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '"' ? '"' : '""<Left>'
 "inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "'" ? "'" : "''<Left>'
 
 "-- Syntax highlihting START
-colorscheme qu
+colorscheme quiet
+set bg=dark
 filetype plugin indent on
 nnoremap <F4> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif <CR>
 "-- Syntax highlihting END
@@ -151,6 +152,11 @@ Plugin 'c.vim'
 "Plugin 'ap/vim-css-color'
 
 call vundle#end()
+
+"-- C Plugin
+let g:C_SourceCodeExtensions = []
+let g:C_NoInsertHeader = 1
+
 
 ""-- ____VIM-PLUG____
 call plug#begin('~/.vim/plugged')
