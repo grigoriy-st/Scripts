@@ -1,0 +1,66 @@
+Xcursor.theme: Adwaita
+Xcursor.size: 24
+
+xterm*termName: xterm-256color
+xterm*shell: /bin/zsh -c "tmux"
+xterm*command: /bin/bash -c "tmux"
+
+
+! Полная конфигурация для UTF-8
+xterm*locale: true
+xterm*utf8: 1
+xterm*utf8Title: true
+xterm*wideChars: true
+xterm*multiByte: true
+! Copy
+XTerm.vt100.selectToClipboard: true
+! Настройки буфера обмена xterm
+xterm*selectToClipboard: true
+xterm*VT100*translations: #override \
+    Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
+    Ctrl <KeyPress> Insert: copy-selection(CLIPBOARD) \n\
+    Ctrl <KeyPress> C: copy-selection(CLIPBOARD) \n\
+    Ctrl <KeyPress> V: insert-selection(CLIPBOARD) \n\
+    Alt <KeyPress> C: copy-selection(CLIPBOARD) \n\
+    Alt <KeyPress> V: insert-selection(CLIPBOARD)
+
+xterm*highlightSelection: true
+xterm*highlightColor: yellow
+xterm*pointerColor: red
+
+xterm*faceName: JetBrainsMono Nerd Font Mono:antialias=true
+xterm*faceSize: 10
+xterm*renderFont: true
+
+! xterm*font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+! xterm*boldFont: -misc-fixed-bold-r-normal--18-120-100-100-c-90-iso10646-1
+
+xterm*charClass: 33:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*cjkWidth: true
+
+! Основные настройки xterm
+xterm*foreground: white
+xterm*background: black
+xterm*geometry: 120x40
+xterm*saveLines: 10000
+xterm*scrollBar: false
+xterm*rightScrollBar: false
+xterm*pointerShape: hand2
+
+! Цвета
+xterm*color0: #000000
+xterm*color1: #ff0000
+xterm*color2: #00ff00
+xterm*color3: #ffff00
+xterm*color4: #0000ff
+xterm*color5: #ff00ff
+xterm*color6: #00ffff
+xterm*color7: #ffffff
+
+! Прозрачность (если поддерживается)
+! xterm*transparent: true
+! xterm*shading: 20
+
+! Курсор
+xterm*cursorColor: yellow
+xterm*cursorBlink: true
