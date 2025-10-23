@@ -1,0 +1,15 @@
+---
+- name: Deploy Arch Linux System
+  hosts: arch_linux
+  become: yes
+  vars_files:
+    - group_vars/all.yaml
+
+  roles:
+    - role: base
+    - role: packages
+    - role: desktop
+    # - role: user-configs
+
+
+

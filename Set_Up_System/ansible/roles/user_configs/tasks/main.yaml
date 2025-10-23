@@ -1,0 +1,23 @@
+---
+- name: Deploy i3 config
+  copy:
+    src: "../Set_Up_System/config_files/Windows Managers/i3-pc/i3/config"
+    dest: "/home/{{ username }}/.config/i3/config"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Deploy vim config
+  copy:
+    src: "../Set_Up_System/config_files/vim/.vimrc"
+    dest: "/home/{{ username }}/.vimrc"
+    owner: "{{ username }}"
+  tags:
+    - problematic
+
+
+- name: Deploy zsh config
+  copy:
+    src: "../Set_Up_System/config_files/shells/zsh/.zshrc"
+    dest: "/home/{{ username }}/.zshrc"
+    owner: "{{ username }}"
+

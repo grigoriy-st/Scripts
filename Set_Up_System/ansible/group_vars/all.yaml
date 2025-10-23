@@ -1,0 +1,16 @@
+---
+username: grigoriy-st
+base_packages:
+  - base-devel
+  - git
+  - zsh
+
+desktop_packages:
+  - i3wm
+  - lightdm
+  - brave
+
+problematic_packages:
+  - vim
+  - st
+
