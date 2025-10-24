@@ -1,16 +1,38 @@
 ---
 username: grigoriy-st
-base_packages:
+official_packages:
+# Base packages
   - base-devel
+  - openssh
   - git
   - zsh
-
-desktop_packages:
-  - i3wm
+# win_env_packages
+  - i3-wm
+  - i3status
+  - i3lock
+  - rofi
+  - dmenu
+  - openbox
+  - xorg-server
+  - xorg-xinit
   - lightdm
-  - brave
+# utils_packages
+  - tmux
+  - xterm
+  - alacritty
+  - bat
+  - fastfetch
+  - xclip
+  - xsel
+# desktop_packages
+
+aur_packages:
+  # - st-git
+  # - brave-bin
+  # - obsidian
+  - obs-cli
+  # - obs-studio-git
+  # - obs-studio-browser
 
 problematic_packages:
   - vim
-  - st
-

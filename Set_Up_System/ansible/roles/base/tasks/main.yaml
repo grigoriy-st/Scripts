@@ -4,16 +4,21 @@
 #     update_cache: yes
 #     upgrade: yes
 
-- name: Install base packages
+- name: Install official packages
   pacman:
-    name: "{{ item }}"
+    name: "{{ official_packages }}"
     state: present
-  loop: "{{ base_packages }}"
 
-- name: Create user
-  user:
-    name: "{{ username }}"
-    groups: wheel
-    shell: /bin/zsh
-
-
+- name: Install AUR packages one by one
+  ansible.builtin.shell: >
+    yay -S --noconfirm
+    --answerclean All
+    --answerdiff All
+    --editmenu false
+    --cleanmenu false
+    --diffmenu false
+    "{{ item }}"
+  args:
+    executable: /bin/bash
+  become: false
+  loop: "{{ aur_packages }}"

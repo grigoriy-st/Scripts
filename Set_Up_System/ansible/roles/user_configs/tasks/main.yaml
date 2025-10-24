@@ -1,23 +1,49 @@
 ---
-- name: Deploy i3 config
-  copy:
-    src: "../Set_Up_System/config_files/Windows Managers/i3-pc/i3/config"
-    dest: "/home/{{ username }}/.config/i3/config"
-    owner: "{{ username }}"
-    group: "{{ username }}"
+# - name: Deploy i3 config
+#   copy:
+#     src: "../Set_Up_System/config_files/Windows Managers/i3-pc/i3/config"
+#     dest: "/home/{{ username }}/.config/i3/config"
+#     owner: "{{ username }}"
+#     group: "{{ username }}"
 
 - name: Deploy vim config
   copy:
     src: "../Set_Up_System/config_files/vim/.vimrc"
     dest: "/home/{{ username }}/.vimrc"
     owner: "{{ username }}"
-  tags:
-    - problematic
 
+# - name: Deploy zsh config
+#   copy:
+#     src: "../Set_Up_System/config_files/shells/zsh/.zshrc"
+#     dest: "/home/{{ username }}/.zshrc"
+#     owner: "{{ username }}"
 
-- name: Deploy zsh config
+# - name: Deploy tmux config
+#   copy:
+#     src: "../Set_Up_System/config_files/terminal\ multiplexer/.tmux"
+#     dest: "/home/{{ username }}/.tmux"
+#     owner: "{{ username }}"
+
+# - name: Deploy xterm config
+#   copy:
+#     src: "../Set_Up_System/config_files/terminal\ emulators/.Xresources"
+#     dest: "/home/{{ username }}/.Xresources"
+#     owner: "{{ username }}"
+
+- name: Deploy lightdm config
   copy:
-    src: "../Set_Up_System/config_files/shells/zsh/.zshrc"
-    dest: "/home/{{ username }}/.zshrc"
+    src: "../Set_Up_System/config_files/lightdm/grigoriy-st.png"
+    dest: "/var/lib/AccountsService/icons/grigoriy-st.png"
     owner: "{{ username }}"
+  copy:
+    src: "../Set_Up_System/config_files/lightdm/ligthdm.conf"
+    dest: "/etc/lightdm"
+    owner: "{{ username }}"
+
+# - name: Deploy Openbox config
+#   copy:
+#     src: "../Set_Up_System/config_files/Windows\ Manages/openbox"
+#     dest: "/home/{{ username }}/.config/openbox/"
+#     owner: "{{ username }}"
+
 
