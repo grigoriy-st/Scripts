@@ -9,16 +9,6 @@
     name: "{{ official_packages }}"
     state: present
 
-- name: Install AUR packages one by one
-  ansible.builtin.shell: >
-    yay -S --noconfirm
-    --answerclean All
-    --answerdiff All
-    --editmenu false
-    --cleanmenu false
-    --diffmenu false
-    "{{ item }}"
-  args:
-    executable: /bin/bash
+- name: Install AUR packages via helper script
+  ansible.builtin.script: install-aur.sh {{ aur_packages | join(' ') }}
   become: false
-  loop: "{{ aur_packages }}"

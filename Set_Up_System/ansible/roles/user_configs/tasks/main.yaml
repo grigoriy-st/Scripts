@@ -8,7 +8,7 @@
 
 - name: Deploy vim config
   copy:
-    src: "../Set_Up_System/config_files/vim/.vimrc"
+    src: vim/.vimrc
     dest: "/home/{{ username }}/.vimrc"
     owner: "{{ username }}"
 
@@ -32,11 +32,11 @@
 
 - name: Deploy lightdm config
   copy:
-    src: "../Set_Up_System/config_files/lightdm/grigoriy-st.png"
+    src: lightdm/grigoriy-st.png
     dest: "/var/lib/AccountsService/icons/grigoriy-st.png"
     owner: "{{ username }}"
   copy:
-    src: "../Set_Up_System/config_files/lightdm/ligthdm.conf"
+    src: lightdm/ligthdm.conf
     dest: "/etc/lightdm"
     owner: "{{ username }}"
 
