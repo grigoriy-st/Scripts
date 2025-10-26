@@ -7,7 +7,7 @@
 
   roles:
     - role: base
-    - role: packages
+    # - role: packages
     - role: desktop
     - role: user_configs
 

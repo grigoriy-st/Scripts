@@ -13,13 +13,13 @@ fi
 
 for pkg in "$@"; do
   echo "==> Installing AUR package: $pkg"
-  script -qec "yay -S --noconfirm \
+  PAGER=cat yay -S --noconfirm \
     --answerclean All \
     --answerdiff All \
-    --editmenu false \
-    --cleanmenu false \
-    --diffmenu false \
-    --pgpfetch false \
+    --editmenu n \
+    --cleanmenu n \
+    --diffmenu n \
+    --pgpfetch n \
     --mflags '--skippgpcheck' \
-    '$pkg'" /dev/null
+    "$pkg" -y
 done
