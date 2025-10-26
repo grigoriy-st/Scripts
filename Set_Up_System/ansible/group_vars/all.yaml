@@ -4,6 +4,7 @@ official_packages:
 # Base packages
   - base-devel
   - openssh
+  - yay
   - git
   - zsh
 # win_env_packages
@@ -20,17 +21,49 @@ official_packages:
   - tmux
   - xterm
   - alacritty
+  - clang
+  - cmake
   - bat
+  - htop
+  - vscode
+  - ranger
+  - nsxiv
+  - mupdf
+  - libnotify
   - fastfetch
+  - tree
+  - lsd
   - xclip
   - xsel
+  - 7zip
+  - rar
+  - vlc
+  - pulseaudio
+  - os-prober
+  - lsof
+  - less
+  - grep
+  - gawk
+# Appearance
+  - gtk3
+  - gtk4
+  - adwaita-cursors
+  - adwaita-fonts
+  - adwaita-icon-theme
+  - adwaita-icon-theme-legacy
+# languages
+  - go
+  - python
+
 # desktop_packages
 
 aur_packages:
   # - st-git
   # - brave-bin
   # - obsidian
-  - obs-cli
+  - xclip
+  # - obs-cli
+  # - oh-my-push
   # - obs-studio-git
   # - obs-studio-browser
 

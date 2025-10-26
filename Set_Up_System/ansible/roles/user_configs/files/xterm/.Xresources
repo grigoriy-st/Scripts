@@ -12,6 +12,7 @@ xterm*utf8: 1
 xterm*utf8Title: true
 xterm*wideChars: true
 xterm*multiByte: true
+xterm*backarrowKey: false
 ! Copy
 XTerm.vt100.selectToClipboard: true
 ! Настройки буфера обмена xterm
@@ -28,7 +29,8 @@ xterm*highlightSelection: true
 xterm*highlightColor: yellow
 xterm*pointerColor: red
 
-xterm*faceName: JetBrainsMono Nerd Font Mono:antialias=true
+! xterm*faceName: FiraCode Nerd Font:antialias=true
+xterm*faceName: DejaVu Sans Mono
 xterm*faceSize: 10
 xterm*renderFont: true
 

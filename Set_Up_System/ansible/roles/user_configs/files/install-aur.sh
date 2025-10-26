@@ -13,7 +13,7 @@ fi
 
 for pkg in "$@"; do
   echo "==> Installing AUR package: $pkg"
-  script -qec "yay -S --noconfirm \
+  yay -S --noconfirm \
     --noprogressbar \
     --answerclean All \
     --answerdiff All \
@@ -22,5 +22,5 @@ for pkg in "$@"; do
     --diffmenu false \
     --pgpfetch false \
     --mflags '--skippgpcheck --noconfigrm' \
-    '$pkg'" /dev/null
+    "$pkg"
 done

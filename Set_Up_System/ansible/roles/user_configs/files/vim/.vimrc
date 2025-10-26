@@ -86,7 +86,7 @@ inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '"' ? '"' : '""<Left>'
 "inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "'" ? "'" : "''<Left>'
 
 "-- Syntax highlihting START
-colorscheme quiet
+colorscheme gruvbox
 set bg=dark
 filetype plugin indent on
 nnoremap <F4> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif <CR>

@@ -6,6 +6,7 @@
     - group_vars/all.yaml
 
   roles:
+    # - role: cp_configs_from_host_2_ansible
     - role: base
     # - role: packages
     - role: desktop
