@@ -1,0 +1,65 @@
+/* /* Убрать кнопку "Список вкладок" */ */
+/* #tabbrowser-tabs arrowscrollbox { */
+/*     display: none !important; */
+/* } */
+
+/* /* Убрать заголовок окна */ */
+/* #titlebar { */
+/*     display: none !important; */
+/* } */
+
+/* /* Убрать строку заголовка */ */
+/* #nav-bar { */
+/*     display: none !important; */
+/* } */
+
+/* Убрать панель закладок */
+#PersonalToolbar {
+    display: none !important;
+}
+
+/* Убрать кнопку меню */
+/* #PanelUI-menu-button { */
+/*     display: none !important; */
+/* } */
+/**/
+/* Убрать строку поиска */
+/* #search-bar { */
+/*     display: none !important; */
+/* } */
+
+/* Убрать кнопки навигации */
+#back-button, #forward-button {
+    display: none !important;
+}
+
+#urlbar-container {
+    margin: 2px !important;
+}
+
+.titlebar-buttonbox-container {
+    display: none !important;
+}
+
+#sidebar-button {
+    display: none !important;
+}
+
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out !important;
+}
+
+#navigator-toolbox:hover #TabsToolbar,
+#navigator-toolbox:hover #nav-bar, 
+#navigator-toolbox:hover #PersonalToolbar {
+    opacity: 1 !important;
+}
+
+#navigator-toolbox:not(:hover) #TabsToolbar {
+    min-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}

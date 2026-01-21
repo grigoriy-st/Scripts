@@ -1,0 +1,7 @@
+---
+
+- name: Deploy zsh config
+  copy:
+    src: zsh/.zshrc
+    dest: "/home/{{ username }}/.zshrc"
+    owner: "{{ username }}"

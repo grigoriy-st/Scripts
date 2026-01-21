@@ -1,0 +1,48 @@
+/* /* Убрать кнопку "Список вкладок" */ */
+/* #tabbrowser-tabs arrowscrollbox { */
+/*     display: none !important; */
+/* } */
+
+/* /* Убрать заголовок окна */ */
+/* #titlebar { */
+/*     display: none !important; */
+/* } */
+
+/* /* Убрать строку заголовка */ */
+/* #nav-bar { */
+/*     display: none !important; */
+/* } */
+
+/* Убрать панель закладок */
+#PersonalToolbar {
+    display: none !important;
+}
+
+/* Убрать кнопку меню */
+/* #PanelUI-menu-button { */
+/*     display: none !important; */
+/* } */
+/**/
+/* Убрать строку поиска */
+/* #search-bar { */
+/*     display: none !important; */
+/* } */
+
+/* Убрать кнопки навигации */
+#back-button, #forward-button {
+    display: none !important;
+}
+
+/* Минималистичный режим - только адресная строка */
+#urlbar-container {
+    margin: 2px !important;
+}
+
+/* Убрать кнопки свернуть/развернуть/закрыть */
+.titlebar-buttonbox-container {
+    display: none !important;
+}
+
+#sidebar-button {
+    display: none !important;
+}

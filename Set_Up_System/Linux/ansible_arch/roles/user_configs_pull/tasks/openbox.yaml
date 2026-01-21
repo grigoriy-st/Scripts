@@ -1,0 +1,9 @@
+---
+
+- name: Deploy Openbox config
+# need to create openbox folder
+  copy:
+    src: openbox/*
+    dest: "/home/{{ username }}/.config/openbox/"
+    owner: "{{ username }}"
+    directory_mode: yes

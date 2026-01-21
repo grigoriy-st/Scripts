@@ -1,0 +1,7 @@
+---
+
+- name: Deploy vim config
+  copy:
+    src: vim/.vimrc
+    dest: "/home/{{ username }}/.vimrc"
+    owner: "{{ username }}"

@@ -1,0 +1,19 @@
+---
+# -name: cp_configs_from_host_2_ansible
+- import_tasks: i3.yaml
+  tags: i3
+
+- import_tasks: vim.yaml
+  tags: vim
+
+- import_tasks: zsh.yaml
+  tags: zsh
+
+- import_tasks: xterm.yaml
+  tags: xterm
+
+- import_tasks: lightdm.yaml
+  tags: lightdm
+
+- import_tasks: openbox.yaml
+  tags: openbox

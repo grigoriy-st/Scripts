@@ -1,0 +1,30 @@
+---
+
+- name: Push user config files from host to repo
+  # delegate_to: localhost
+  # connection: local
+  # block:
+  #   - name: Create repo directories
+  #     file:
+  #       path: "{{ item.src_repo | dirname }}"
+  #       state: directory
+  #       mode: '0755'
+  #     loop: "{{ dotfiles_configs }}"
+      
+  #   - name: Fetch configs from remote host to repo
+  #     fetch:
+  #       src: "{{ item.src_host }}"
+  #       dest: "{{ item.src_repo }}"
+  #       flat: yes
+  #     loop: "{{ dotfiles_configs }}"
+  #     when: item.src_host is defined and item.src_repo is defined
+      
+  #   - name: Fetch multiple files from directories
+  #     fetch:
+  #       src: "{{ item.src_host }}/{{ file }}"
+  #       dest: "{{ item.src_repo }}/{{ file }}"
+  #       flat: yes
+  #     with_subelements:
+  #       - "{{ dotfiles_configs }}"
+  #       - files
+  #       - skip_missing: true

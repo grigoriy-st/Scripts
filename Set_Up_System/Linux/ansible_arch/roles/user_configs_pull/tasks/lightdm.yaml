@@ -1,0 +1,15 @@
+---
+
+- name: Deploy lightdm config
+  block:
+    - name: Deploy lightdm user image
+      copy:
+        src: lightdm/grigoriy-st.png
+        dest: "/var/lib/AccountsService/icons/grigoriy-st.png"
+        owner: "{{ username }}"
+    - name: Deploy lightdm config
+      copy:
+        src: lightdm/lightdm.conf
+        dest: "/etc/lightdm"
+        owner: "{{ username }}"
+      become: yes

@@ -1,0 +1,7 @@
+---
+
+- name: Deploy xterm config
+  copy:
+    src: xterm/.Xresources
+    dest: "/home/{{ username }}/.Xresources"
+    owner: "{{ username }}"

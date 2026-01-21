@@ -1,0 +1,25 @@
+<openbox_menu>
+  <menu id="root-menu" label="Menu">
+    <item label="Terminal">
+      <action name="Execute">
+        <command>xterm</command>
+      </action>
+    </item>
+    <item label="File Manager">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </item>
+    <item label="Web Browser">
+      <action name="Execute">
+        <command>brave</command>
+      </action>
+    </item>
+    <separator/>
+    <menu id="system-menu" label="System"/>
+    <separator/>
+    <item label="Exit">
+      <action name="Exit"/>
+    </item>
+  </menu>
+</openbox_menu>

@@ -1,0 +1,18 @@
+---
+
+- name: Deploy i3 config
+  block:
+    - name: Deploy i3 user config
+      copy:
+        src: i3-wm/config
+        dest: "/home/{{ username }}/.config/i3/config"
+        owner: "{{ username }}"
+        group: "users"
+
+    - name: Deploy i3 status config
+      copy:
+        src: i3-wm/i3status.conf
+        dest: "/etc/i3status.conf"
+        owner: "{{ username }}"
+        group: "users"
+      become: yes
