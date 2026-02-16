@@ -2,7 +2,7 @@
 
 cd ~/
 
-apt install git sudo tmux
+apt install git sudo tmux zsh
 
 
 curl -O https://raw.githubusercontent.com/grigoriy-st/scripts/master/.vimrc
