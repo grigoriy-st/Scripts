@@ -4,7 +4,6 @@ cd ~/
 
 apt install git sudo tmux
 
-tmux
 
 curl -O https://raw.githubusercontent.com/grigoriy-st/scripts/master/.vimrc
 curl -O https://raw.githubusercontent.com/grigoriy-st/scripts/master/.tmux.conf
