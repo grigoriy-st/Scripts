@@ -160,5 +160,5 @@ Plug 'wojciechkepka/vim-github-dark'
 
 call plug#end()
 
-colorscheme ghdark
+colorscheme industry
 " let g:gh_color
