@@ -20,8 +20,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 mkdir -p ~/.poshthemes
 curl -L https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/kali.omp.json -o ~/.poshthemes/kali.omp.json
 
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
 if ! grep -q "oh-my-posh.*kali" ~/.zshrc; then
     echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/kali.omp.json)"' >> ~/.zshrc
 fi
 
-source ~/.zshr
+source ~/.zshrc
