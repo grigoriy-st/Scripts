@@ -15,6 +15,7 @@ set nofoldenable
 set colorcolumn=80
 highlight ColorColumn guifg=NONE guibg=#121212 ctermbg=233
 
+
 "-- Line warpping START
 set wrap
 set linebreak
@@ -31,10 +32,8 @@ set foldmethod=syntax
 set nu rnu
 function! ToggleNumbering()
   if &number
-    " Выключаем всё
     set nonumber norelativenumber foldcolumn=0
   else
-    " Включаем всё
     set number relativenumber foldcolumn=2
   endif
 endfunction
@@ -74,21 +73,11 @@ endfunction
 
 "-- Netrw END
 
-"-- Bracket and Quatetion marks Autocompletion
-
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap < <><Left>
-inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '"' ? '"' : '""<Left>'
-"inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "'" ? "'" : "''<Left>'
-
 "-- Syntax highlihting START
-colorscheme qu
+set bg=dark
 filetype plugin indent on
-nnoremap <F4> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif <CR>
+syntax enable filetype on
+" nnoremap <F4> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif <CR>
 "-- Syntax highlihting END
 
 "-- Spaces START
@@ -146,11 +135,16 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 
-Plugin 'c.vim'
+" Plugin 'c.vim'
 "Plugin 'rip-rip/clang_complete'
 "Plugin 'ap/vim-css-color'
 
 call vundle#end()
+
+"-- C Plugin
+let g:C_SourceCodeExtensions = []
+let g:C_NoInsertHeader = 1
+
 
 ""-- ____VIM-PLUG____
 call plug#begin('~/.vim/plugged')
@@ -159,10 +153,12 @@ call plug#begin('~/.vim/plugged')
 ""Plug 'fisadev/FixedTaskList.vim'
 Plug 'lambdalisue/suda.vim'
 ""Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-
+Plug 'wojciechkepka/vim-github-dark'
 " Plug 'ryanoasis/vim-devicons'
 "" Plug 'airblade/vim-gitgutter'
 "" Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
+colorscheme ghdark
+" let g:gh_color

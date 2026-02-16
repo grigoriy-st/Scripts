@@ -1,0 +1,41 @@
+---
+
+- name: "Sync {{ config | capitalize }} config"
+  hosts: "{{ host | default('localhost') }}"
+  gather_facts: no
+  
+  vars:
+    configs_map:
+      vim:
+        src_host: "/home/{{ username }}/.vimrc"
+        src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/vim/.vimrc"
+      zsh:
+        src_host: "/home/{{ username }}/.zshrc" 
+        src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/zsh/.zshrc"
+      i3:
+        src_host: "/home/{{ username }}/.config/i3/config"
+        src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/i3/config"
+      tmux:
+        src_host: "/home/{{ username }}/.tmux.conf"
+        src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/tmux/.tmux.conf"
+      test:
+        src_host: "/home/{{ username }}/.test.conf"
+        src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/test/.test.conf"
+    
+  tasks:
+    - name: Push {{ config }} to repo
+      fetch:
+        src: "{{ configs_map[config].src_host }}"
+        dest: "{{ configs_map[config].src_repo }}"
+        flat: yes
+      when: direction == 'push'
+      tags: [push, "{{ config }}"]
+    
+    - name: Pull {{ config }} from repo
+      copy:
+        src: "{{ configs_map[config].src_repo }}"
+        dest: "{{ configs_map[config].src_host }}"
+        owner: "{{ username }}"
+        mode: '0644'
+      when: direction == 'pull'
+      tags: [pull, "{{ config }}"]

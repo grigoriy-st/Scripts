@@ -1,4 +1,0 @@
-[arch_linux]
-localhost ansible_connection=local
-
-
