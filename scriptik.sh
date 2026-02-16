@@ -14,7 +14,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 mkdir -p ~/.poshthemes
 curl -L https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/kali.omp.json -o ~/.poshthemes/kali.omp.json
@@ -24,5 +24,19 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 if ! grep -q "oh-my-posh.*kali" ~/.zshrc; then
     echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/kali.omp.json)"' >> ~/.zshrc
 fi
+sed -i '/# AUTOSTART TMUX/,+3d' ~/.zshrc
+
+cat >> ~/.zshrc << 'EOF'
+
+if [[ -z "$TMUX" ]] && [[ "$TERM" = "linux" ]]; then
+    if [[ "$(tty)" == /dev/tty* ]]; then
+        if tmux has-session -t main 2>/dev/null; then
+            exec tmux attach-session -t main
+        else
+            exec tmux new-session -s main
+        fi
+    fi
+fi
+EOF
 
 source ~/.zshrc
