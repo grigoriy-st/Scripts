@@ -9,6 +9,12 @@
       vim:
         src_host: "/home/{{ username }}/.vimrc"
         src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/vim/.vimrc"
+      nvim:
+        src_host: "~/.config/nvim/init.lua"
+        src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/nvim/init.lua"
+      alacritty:
+        src_host: "~/.config/alacritty/alacritty.toml"
+        src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/alacritty/alacritty.toml"
       zsh:
         src_host: "/home/{{ username }}/.zshrc" 
         src_repo: "{{ playbook_dir }}/roles/user_configs_push/files/zsh/.zshrc"

@@ -1,0 +1,30 @@
+[font]
+normal = { family = "FiraCode", style ="Medium" }
+size = 10
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+# live_cursor = false # test file
+
+[mouse]
+bindings = [
+   { mouse = "Left", action = "ExpandSelection" },
+]
+
+[keyboard]
+bindings = [
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+]
+
+[terminal]
+shell = "tmux"
+# | {
+#   program = tmux,
+#   args = [
+#     - new-session
+#     - -A
+#     - -s
+#     - main
+#     ]}
