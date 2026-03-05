@@ -1,0 +1,9 @@
+---
+additional_packages:
+  - networkmanager
+  - powertop
+  - xorg-xbacklight
+  # - light # by yay
+
+laptops_roles:
+  - i3wm

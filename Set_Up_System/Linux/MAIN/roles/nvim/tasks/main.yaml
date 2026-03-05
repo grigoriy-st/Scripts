@@ -1,0 +1,10 @@
+---
+
+- name: Deploy nvim config
+  copy:
+    dest: "{{ user_home }}/.config/nvim/init.lua"
+    owner: "{{ username }}"
+    mode: "0755"
+  become: yes
+  become_user: "{{ username }}"
+  tags: nvim-config

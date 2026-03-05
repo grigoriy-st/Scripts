@@ -1,0 +1,22 @@
+base_packages:
+  - git
+  - tree
+  - less
+  - tmux
+  - i3wm
+  - curl
+  - iwd
+  - openbox
+  - bash
+  - zsh
+  - alsa-mixer
+
+common_roles:
+  - base
+  - bash
+  - zsh
+  - nvim
+  - vim
+  - emacs
+  - i3wm
+  - openbox

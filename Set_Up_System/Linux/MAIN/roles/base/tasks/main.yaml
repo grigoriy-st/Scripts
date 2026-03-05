@@ -1,0 +1,21 @@
+---
+- name: Update package cache
+  pacman:
+    update_cache: yes
+  become: yes
+  tags: base
+
+- name: Install Base packages
+  pacman:
+    name: "{{ base_packages }}"
+    state: present
+  become: yes
+  tags: base
+
+# - name: Install additional packages
+#   pacman:
+#     name: "{{ additional_packages }}"
+#     state: present
+#   become: yes
+#   when: additional_packages is defined
+#   tag: base

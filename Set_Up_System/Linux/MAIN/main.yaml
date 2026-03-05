@@ -1,0 +1,36 @@
+---
+
+- name: Full Arh linux setup
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  pre_tasks:
+    - name: Set common facts
+      set_fact:
+        is_laptop: "{{ 'laptop' in group_names }}"
+        is_deskop: "{{ 'desktop' in group_names }}"
+      tags: always
+
+  roles:
+    - role: base
+      tags: base
+    
+  #  - role: common_utils
+  #    tags: common_utils
+
+    - role: nvim
+      tags: nvim
+
+    - role: i3wm
+      tags: i3
+
+    - role: openbox
+      tags: openbox
+        
+  post_tasks:
+    - name: Summary
+      debug:
+        msg:
+          - "Setup for {{ inventory_hostname }} is completed!"
+      tags: always

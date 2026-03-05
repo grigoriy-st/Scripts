@@ -1,0 +1,9 @@
+---
+
+- name: Include setup tasks
+  import_tasks: setup.yaml
+  tags: [nvim, nvim-setup]
+
+- name: Include config deployment
+  import_tasks: config.yaml
+  tags: [nvim, nvim-config]
