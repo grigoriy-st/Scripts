@@ -1,6 +1,8 @@
 ---
 - name: Update package cache
-  pacman:
+  # ansible.builtin.pacman:
+  community.general.pacman:
+    state: latest
     update_cache: yes
   become: yes
   tags: base
@@ -11,6 +13,12 @@
     state: present
   become: yes
   tags: base
+
+- name: Configure touchpad for laptops
+  ansible.builtin.include_tasks: touchpad.yaml
+  when: inventory_hostname in groups['laptops']
+  tags: touchpad
+
 
 # - name: Install additional packages
 #   pacman:

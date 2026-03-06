@@ -1,0 +1,13 @@
+---
+- name: Check if Synaptics touchpad exists
+  ansible.builtint.commnad:
+    cmd: xinput list | grep -i "Synaptics\|Touchpad"
+  register: touchpad_check
+
+- name: Enable touchpad tapping
+  ansible.builtin.command:
+    cmd: xinput set-prop "SynPS/2 Synaptics Touchpad" "libinput Tapping Enabled" 1
+  when:
+    touchpad_check.rc == 0
+  register: result
+  changed_when: register.rc == 0
